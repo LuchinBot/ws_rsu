@@ -1,0 +1,179 @@
+<template>
+  <div>
+    <section class="container mx-auto">
+      <div class="evento-1 grid grid-cols-12 py-10 overflow-hidden items-center">
+        <div class="left text-left col-span-12 md:col-span-6 px-10">
+          <h2 class="text-2xl font-semibold text-slate-950">Realizado el 12/11/2024</h2>
+          <h1 class="text-3xl font-semibold text-green-600 mb-6">
+            Grán Olimpiada Interfacultades, realizadas en la Ciudad Universitaria - Tarapoto
+          </h1>
+          <p class="text-lg mb-12">
+            Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <a href="#testimonios"
+            class="flex w-max items-center border-2 border-green-500 transition duration-500 justify-between bg-white-400 text-green-500 font-bold py-2 px-10 mb-3 rounded-full hover:bg-green-500 hover:text-slate-50">
+            <i class="fa fa-quote-left mr-2"></i> Dejar testimonio
+          </a>
+        </div>
+        <div class="right col-span-12 md:col-span-6 flex justify-center items-center">
+          <div class="image relative" style="background-image: url('img/start-1.jpg');">
+            <span class="absolute inset-0 bg-slate-950 opacity-10"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="">
+      <div class="container mx-auto px-10 py-20">
+        <h2 class="text-3xl font-semibold text-slate-950">Galeria del evento</h2>
+        <p class="text-lg mb-12">
+          <span class="text-green-600 font-semibold">Clickea</span> cualquier imagen para verlo más a detalle.
+        </p>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group" id="1">
+            <div class="image relative bg-cover bg-center h-64" style="background-image: url('src/img/start-1.jpg');">
+              <span
+                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-50 group-hover:opacity-80"></span>
+              <span
+                class="transition-opacity duration-300 opacity-0 absolute w-full h-full flex flex-col items-center justify-center text-slate-50 p-3 text-center group-hover:opacity-100">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-3xl"></i>
+              </span>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group" id="2">
+            <div class="image relative bg-cover bg-center h-64" style="background-image: url('src/img/start-1.jpg');">
+              <span
+                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-50 group-hover:opacity-80"></span>
+              <span
+                class="transition-opacity duration-300 opacity-0 absolute w-full h-full flex flex-col items-center justify-center text-slate-50 p-3 text-center group-hover:opacity-100">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-3xl"></i>
+              </span>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group" id="2">
+            <div class="image relative bg-cover bg-center h-64" style="background-image: url('src/img/start-1.jpg');">
+              <span
+                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-50 group-hover:opacity-80"></span>
+              <span
+                class="transition-opacity duration-300 opacity-0 absolute w-full h-full flex flex-col items-center justify-center text-slate-50 p-3 text-center group-hover:opacity-100">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-3xl"></i>
+              </span>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group" id="2">
+            <div class="image relative bg-cover bg-center h-64" style="background-image: url('src/img/start-1.jpg');">
+              <span
+                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-50 group-hover:opacity-80"></span>
+              <span
+                class="transition-opacity duration-300 opacity-0 absolute w-full h-full flex flex-col items-center justify-center text-slate-50 p-3 text-center group-hover:opacity-100">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-3xl"></i>
+              </span>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group" id="2">
+            <div class="image relative bg-cover bg-center h-64" style="background-image: url('src/img/start-2.jpg');">
+              <span
+                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-50 group-hover:opacity-80"></span>
+              <span
+                class="transition-opacity duration-300 opacity-0 absolute w-full h-full flex flex-col items-center justify-center text-slate-50 p-3 text-center group-hover:opacity-100">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-3xl"></i>
+              </span>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group" id="2">
+            <div class="image relative bg-cover bg-center h-64" style="background-image: url('src/img/start-1.jpg');">
+              <span
+                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-50 group-hover:opacity-80"></span>
+              <span
+                class="transition-opacity duration-300 opacity-0 absolute w-full h-full flex flex-col items-center justify-center text-slate-50 p-3 text-center group-hover:opacity-100">
+                <i class="fa-solid fa-up-right-and-down-left-from-center text-3xl"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="" id="testimonios">
+      <div class="container mx-auto px-10 py-10">
+        <h2 class="text-3xl font-semibold text-green-500 mb-4">Testimonios</h2>
+        <p class="text-lg mb-8 text-slate-500">
+          Deja tu testimonio sobre el evento
+        </p>
+
+        <div class="rounded-lg flex flex-col gap-4 mb-6">
+          <div class="flex items-start gap-4">
+            <div class="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center" style="width: 100px; height:100px" >
+              <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="Avatar"
+                class="w-full h-full rounded-full object-cover">
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-green-600 font-semibold text-l mb-2">Usuario 1</h3>
+              <textarea
+                class="w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-green-400 focus:outline-none shadow-md"
+                rows="3" placeholder="Escribe tu testimonio aquí..."></textarea>
+              <div class="flex justify-between">
+                <div class="flex items-center gap-2">
+                  <input type="checkbox" id="terminos" class="w-4 h-4 border-gray-300 focus:ring-green-500">
+                  <label for="terminos" class="text-slate-700 text-sm">
+                    Acepto los términos y condiciones
+                  </label>
+                </div>
+                <button class="bg-green-500 text-white px-10 py-2 rounded-md hover:bg-green-600 transition">
+                  Enviar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg flex flex-col gap-4 mb-5">
+          <div class="flex items-start gap-4">
+            <div class="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center" style="width: 100px; height:100px">
+              <img src="https://xsgames.co/randomusers/avatar.php?g=female" alt="Avatar"
+                class="w-full h-full rounded-full object-cover">
+            </div>
+            <div class="flex-grow w-80">
+              <h3 class="text-green-600 font-semibold text-l mb-2">Usuario 2 &#8226; <span
+                  class="text-slate-400 font-light">hace 10 minutos</span></h3>
+              <p class="text-slate-500 bg-white p-3 font-light rounded-md shadow-md">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium doloremque harum dolore cumque id natus esse magni provident placeat reprehenderit dignissimos a rerum ullam magnam at perspiciatis, veritatis illo nam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+import { mapState, mapMutations } from "vuex";
+export default {
+  name: "EventoComponent",
+  components: {},
+
+  data() {
+    return {};
+  },
+
+  computed: {
+    ...mapState(["empresa"]),
+  },
+
+  created() {},
+
+  mounted() {
+    document.title =
+      "Evento | " +
+      (this.empresa.abreviatura ? this.empresa.abreviatura : "-");
+  },
+
+  methods: {
+    ...mapMutations(["setLoading"]),
+  },
+};
+</script>
+
