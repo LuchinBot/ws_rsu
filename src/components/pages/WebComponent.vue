@@ -17,7 +17,7 @@
             armonía con el medio ambiente.
           </p>
           <a
-            href="contacto.html"
+            href="/contacto"
             class="flex w-min items-center border-2 border-green-500 transition duration-500 justify-between bg-white-400 text-green-500 font-bold py-2 px-10 mb-3 rounded-full hover:bg-green-500 hover:text-slate-50"
           >
             <i class="fa fa-headset mr-2"></i> Contáctenos

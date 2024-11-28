@@ -7,17 +7,17 @@
           <div>
             <ul class="flex space-x-6 text-2xl">
               <li>
-                <a href="#"
+                <a href="https://www.facebook.com/@unsmperu/" target="_blank"
                   class="flex bg-slate-50 text-green-600 rounded-full items-center transition duration-500 justify-center shadow-md hover:bg-green-500 hover:text-slate-50 footer-icon"><i
                     class="fab fa-facebook-f"></i></a>
               </li>
               <li>
-                <a href="#"
+                <a href="https://www.instagram.com/unsmperu/" target="_blank"
                   class="flex bg-slate-50 text-green-600 rounded-full items-center transition duration-500 justify-center shadow-md hover:bg-green-500 hover:text-slate-50 footer-icon"><i
                     class="fab fa-instagram"></i></a>
               </li>
               <li>
-                <a href="#"
+                <a href="https://www.youtube.com/@unsmperu" target="_blank"
                   class="flex bg-slate-50 text-green-600 rounded-full items-center transition duration-500 justify-center shadow-md hover:bg-green-500 hover:text-slate-50 footer-icon"><i
                     class="fab fa-youtube"></i></a>
               </li>
@@ -31,26 +31,31 @@
 
 <script>
 import { mapState, mapActions, mapMutations } from "vuex";
-
 export default {
   name: "FooterComponent",
+
   data() {
     return {
     };
   },
+
   computed: {
     ...mapState(["loading", "empresa"]),
   },
+
+  mounted() {
+    this.loadObjEmpresa(), window.addEventListener("scroll", this.checkScroll);
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.checkScroll);
+  },
+
   methods: {
     ...mapMutations(["setLoading"]),
     ...mapActions(["loadObjEmpresa"]),
 
-  },
-  mounted() {
-    this.loadObjEmpresa(), window.addEventListener("scroll", this.checkScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.checkScroll);
-  },
+  }
 };
 </script>
+
