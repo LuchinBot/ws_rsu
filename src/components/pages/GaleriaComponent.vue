@@ -27,137 +27,27 @@
     <section>
       <div class="container mx-auto py-20">
         <div class="grid grid-cols-3 gap-4">
-          <div
+          <div v-for="(value, key) in ListaEvents" :key="key"
             class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group"
           >
             <div
               class="image relative bg-cover bg-center h-64"
-              style="background-image: url('/img/start-1.jpg')"
+              :style="{ 'background-image': 'url(' + value.image + ')' }"
             >
               <span
                 class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-80 group-hover:opacity-90"
               ></span>
               <a
-                href=""
+               :href="'/evento/' + value.slug"
                 class="absolute w-full h-full flex flex-col items-center justify-end text-slate-50 p-3 text-center"
               >
                 <h1
                   class="text-lg rounded px-2 text-tuncate overflow-hidden mb-2"
                 >
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Repellat magni esse voluptas fuga? Incidunt, vitae neque
-                  tempore distinctio quis ea quo aliquam.
+                  {{value.title}}
                 </h1>
                 <p class="bg-green-500 font-semibold p-2 rounded-md text-sm">
-                  12/12/2024
-                </p>
-              </a>
-            </div>
-          </div>
-          <div
-            class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group"
-          >
-            <div
-              class="image relative bg-cover bg-center h-64"
-              style="background-image: url('/img/start-1.jpg')"
-            >
-              <span
-                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-80 group-hover:opacity-90"
-              ></span>
-              <a
-                href=""
-                class="absolute w-full h-full flex flex-col items-center justify-end text-slate-50 p-3 text-center"
-              >
-                <h1
-                  class="text-lg rounded px-2 text-tuncate overflow-hidden mb-2"
-                >
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Repellat magni esse voluptas fuga? Incidunt, vitae neque
-                  tempore distinctio quis ea quo aliquam.
-                </h1>
-                <p class="bg-green-500 font-semibold p-2 rounded-md text-sm">
-                  12/12/2024
-                </p>
-              </a>
-            </div>
-          </div>
-          <div
-            class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group"
-          >
-            <div
-              class="image relative bg-cover bg-center h-64"
-              style="background-image: url('/img/start-1.jpg')"
-            >
-              <span
-                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-80 group-hover:opacity-90"
-              ></span>
-              <a
-                href=""
-                class="absolute w-full h-full flex flex-col items-center justify-end text-slate-50 p-3 text-center"
-              >
-                <h1
-                  class="text-lg rounded px-2 text-tuncate overflow-hidden mb-2"
-                >
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Repellat magni esse voluptas fuga? Incidunt, vitae neque
-                  tempore distinctio quis ea quo aliquam.
-                </h1>
-                <p class="bg-green-500 font-semibold p-2 rounded-md text-sm">
-                  12/12/2024
-                </p>
-              </a>
-            </div>
-          </div>
-          <div
-            class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group"
-          >
-            <div
-              class="image relative bg-cover bg-center h-64"
-              style="background-image: url('/img/start-1.jpg')"
-            >
-              <span
-                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-80 group-hover:opacity-90"
-              ></span>
-              <a
-                href=""
-                class="absolute w-full h-full flex flex-col items-center justify-end text-slate-50 p-3 text-center"
-              >
-                <h1
-                  class="text-lg rounded px-2 text-tuncate overflow-hidden mb-2"
-                >
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Repellat magni esse voluptas fuga? Incidunt, vitae neque
-                  tempore distinctio quis ea quo aliquam.
-                </h1>
-                <p class="bg-green-500 font-semibold p-2 rounded-md text-sm">
-                  12/12/2024
-                </p>
-              </a>
-            </div>
-          </div>
-          <div
-            class="overflow-hidden rounded-xl shadow-xl transition-all duration-500 hover:scale-105 group"
-          >
-            <div
-              class="image relative bg-cover bg-center h-64"
-              style="background-image: url('/img/start-1.jpg')"
-            >
-              <span
-                class="absolute transition-opacity duration-300 inset-0 bg-gradient-to-r from-green-700 to-slate-900 opacity-80 group-hover:opacity-90"
-              ></span>
-              <a
-                href=""
-                class="absolute w-full h-full flex flex-col items-center justify-end text-slate-50 p-3 text-center"
-              >
-                <h1
-                  class="text-lg rounded px-2 text-tuncate overflow-hidden mb-2"
-                >
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Repellat magni esse voluptas fuga? Incidunt, vitae neque
-                  tempore distinctio quis ea quo aliquam.
-                </h1>
-                <p class="bg-green-500 font-semibold p-2 rounded-md text-sm">
-                  12/12/2024
+                  {{value.date}}
                 </p>
               </a>
             </div>
@@ -175,7 +65,9 @@ export default {
   components: {},
 
   data() {
-    return {};
+    return {
+      ListaEvents: [],
+    };
   },
 
   computed: {
@@ -188,10 +80,16 @@ export default {
     document.title =
       "Galeria | " +
       (this.empresa.abreviatura ? this.empresa.abreviatura : "-");
+    this.getEvent();
   },
 
   methods: {
     ...mapMutations(["setLoading"]),
+    getEvent() {
+      this.$http.get("ws_event/list_events").then((res) => {
+        this.ListaEvents = res.data.Events;
+      });
+    },
   },
 };
 </script>

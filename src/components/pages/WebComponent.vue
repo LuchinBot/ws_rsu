@@ -34,28 +34,27 @@
       </div>
     </section>
     <section class="bg-green-400">
-      <div class="container mx-auto start-2 grid grid-cols-12 overflow-hidden">
+      <div class="container mx-auto start-2 grid grid-cols-12 overflow-hidden" v-for="(value, key) in ListaEvents.slice(0, 1)" :key="key">
         <div
           class="right col-span-12 md:col-span-4 flex justify-center items-end"
         >
           <div
             class="image relative overflow-hidden"
-            style="background-image: url('/img/start-2.jpg')"
+              :style="{ 'background-image': 'url(' + value.image + ')' }"
           >
             <span class="absolute inset-0 bg-slate-950 opacity-10"></span>
           </div>
         </div>
         <div
-          class="left flex items-center text-right py-20 col-span-12 md:col-span-8 px-10"
+          class="left flex items-center text-right justify-end py-20 col-span-12 md:col-span-8 px-10"
         >
           <div class="flex-col items-end justify-end">
-            <p class="text-slate-200 py-3">REALIZADO EL 10/11/2024</p>
+            <p class="text-slate-200 py-3">REALIZADO EL {{value.date}}</p>
             <h1 class="text-4xl font-semibold text-slate-50 mb-6">
-              "Simulacro éxistoso realizado por los estudiantes de la
-              Universidad Nacional de San Martín"
+             {{value.title}}
             </h1>
             <a
-              href="contacto.html"
+               :href="'/evento/' + value.slug"
               class="flex float-end font-medium w-max items-center border-2 border-slate-50 transition duration-700 justify-between bg-slate-50 text-slate-950 py-2 px-10 mb-3 rounded-full hover:bg-green-500 hover:text-slate-50"
             >
               <i class="fa fa-share mr-2"></i> Ver más
@@ -65,28 +64,28 @@
       </div>
     </section>
     <section class="">
-      <div class="container mx-auto start-3 grid grid-cols-12 overflow-hidden">
+      <div class="container mx-auto start-3 grid grid-cols-12 overflow-hidden"  v-for="(value, key) in ListaEvents.slice(1, 2)" :key="key">
         <div
           class="right col-span-12 md:col-span-4 flex justify-center items-start"
         >
           <div
             class="image relative overflow-hidden"
-            style="background-image: url('/img/start-3.jpg')"
+              :style="{ 'background-image': 'url(' + value.image + ')' }"
           >
             <span class="absolute inset-0 bg-slate-950 opacity-10"></span>
           </div>
         </div>
         <div
-          class="left flex items-center text-right py-20 col-span-12 md:col-span-8 px-10"
+          class="left flex items-center justify-end text-right py-20 col-span-12 md:col-span-8 px-10"
         >
           <div class="flex-col items-end justify-end">
-            <p class="text-green-500 py-3">REALIZADO EL 10/11/2024</p>
+            <p class="text-green-500 py-3">REALIZADO EL {{value.date}}</p>
             <h1 class="text-4xl font-semibold text-green-500 mb-6">
-              "Simulacro éxistoso realizado por los estudiantes de la
-              Universidad Nacional de San Martín"
+                           {{value.title}}
+
             </h1>
             <a
-              href="contacto.html"
+               :href="'/evento/' + value.slug"
               class="flex float-end font-medium w-max items-center border-2 border-gree-500 transition duration-700 justify-between bg-green-500 text-slate-50 py-2 px-10 mb-3 rounded-full hover:bg-green-100 hover:text-slate-950"
             >
               <i class="fa fa-share mr-2"></i> Ver más
@@ -105,7 +104,9 @@ export default {
   components: {},
 
   data() {
-    return {};
+    return {
+      ListaEvents: [],
+    };
   },
 
   computed: {
@@ -117,10 +118,16 @@ export default {
   mounted() {
     document.title =
       "Inicio | " + (this.empresa.abreviatura ? this.empresa.abreviatura : "-");
+    this.getEvent();
   },
 
   methods: {
     ...mapMutations(["setLoading"]),
+    getEvent() {
+      this.$http.get("ws_event/list_events").then((res) => {
+        this.ListaEvents = res.data.Events;
+      });
+    },
   },
 };
 </script>

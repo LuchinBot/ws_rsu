@@ -14,6 +14,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 window.baseUrl = process.env.VUE_APP_ROOT_API;
 window.tokenAPI = process.env.VUE_APP_TOKEN_API;
 window.baseCli = process.env.VUE_APP_ROOT_CLI;
+console.log(window.baseUrl + 'hola');  // Verifica que esta URL sea correcta
 
 const instance = axios.create({
   baseURL: window.baseUrl,
@@ -21,6 +22,7 @@ const instance = axios.create({
     Authorization: "Bearer " + window.tokenAPI,
   },
 });
+
 Vue.config.productionTip = false;
 Vue.prototype.$http = instance;
 new Vue({
